@@ -1,9 +1,16 @@
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
+import json
+
+def load_config(path="config.json"):
+    with open(path) as f:
+        return json.load(f)
+
+config = load_config()
 
 def run():
-    gemini_api_key = os.getenv("GEMINI_API_KEY")
+    gemini_api_key = config["GEMINI_API_KEY"]
     model = ChatGoogleGenerativeAI(model ="gemini-2.0-flash",api_key = gemini_api_key)
 
     st.title("Sentiment Analyzer")
@@ -31,7 +38,8 @@ def run():
         ### Conversation History : {chat_history_text}
         '''
 
-        response = model.invoke(prompt)
+        with st.spinner("Generating response..."):
+            response = model.invoke(prompt)
         st.session_state.senti_chat_history.append({"question":user_prompt,"answer":response.content})
         st.chat_message("assistant").markdown(response.content)
 

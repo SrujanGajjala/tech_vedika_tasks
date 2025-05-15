@@ -6,10 +6,17 @@ import streamlit as st
 import tempfile
 import json
 import re
+import json
+
+def load_config(path="config.json"):
+    with open(path) as f:
+        return json.load(f)
+
+config = load_config()
 
 load_dotenv()
 def run():
-  gemini_api_key = os.getenv("GEMINI_API_KEY")
+  gemini_api_key = config["GEMINI_API_KEY"]
 
   model = ChatGoogleGenerativeAI(model = "gemini-2.0-flash",api_key = gemini_api_key,temperature = 0)
 
@@ -94,7 +101,8 @@ def run():
 
   {text}
   """
-      response = model.invoke(prompt)
+      with st.spinner("Generating response..."):
+            response = model.invoke(prompt)
       # st.write(text)
       st.subheader("JSON Format:")
       st.write(response.text())

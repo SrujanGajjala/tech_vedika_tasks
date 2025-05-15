@@ -1,10 +1,17 @@
 import streamlit as st
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
+import json
+
+def load_config(path="config.json"):
+    with open(path) as f:
+        return json.load(f)
+
+config = load_config()
 
 
 def run():
-    gemini_api_key = os.getenv("GEMINI_API_KEY")
+    gemini_api_key = config["GEMINI_API_KEY"]
     model = ChatGoogleGenerativeAI(model ="gemini-2.0-flash",api_key = gemini_api_key)
     st.title("Language Detector and Translator")
 
@@ -14,7 +21,8 @@ def run():
         if user_prompt:
             prompt = f'''Detect the language of the following text and respond only with the name of the language.
             Here's the text : {user_prompt}'''
-            response = model.invoke(prompt)
+            with st.spinner("Generating response..."):
+                response = model.invoke(prompt)
             st.write(response.content)
     
     elif selected_option == "Translator":
@@ -22,7 +30,8 @@ def run():
         if user_prompt:
             prompt = f'''Translate the following text to english and return it.
             Here's the text : {user_prompt}'''
-            response = model.invoke(prompt)
+            with st.spinner("Generating response..."):
+                response = model.invoke(prompt)
             st.write(response.content)
 
 

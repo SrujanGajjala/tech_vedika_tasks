@@ -4,10 +4,18 @@ from langchain.agents.agent_types import AgentType
 from langchain_community.utilities import SQLDatabase
 from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_google_genai import GoogleGenerativeAI
 import urllib
+import json
+
+def load_config(path="config.json"):
+    with open(path) as f:
+        return json.load(f)
+
+config = load_config()
 
 def run():
-    gemini_api_key = "AIzaSyAPTR5DUvWct50Tq8sK-iJP3nnraJz2nVs"
+    gemini_api_key = config["GEMINI_API_KEY"]
     llm = ChatGoogleGenerativeAI(model = "gemini-2.0-flash", api_key = gemini_api_key)
 
     db_host = "SRUJAN\SQLEXPRESS"
