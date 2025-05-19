@@ -34,6 +34,7 @@ def run():
         Based on the topic and specifications generate content related to it.
         Topic:{topic}
         Specifications : {specifications}
+        ### Conversation History : {chat_history_text}
         '''
         with st.spinner("Generating response..."):
             response = model.invoke(prompt)
