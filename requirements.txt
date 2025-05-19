@@ -7,3 +7,4 @@ langchain_huggingface
 faiss-cpu
 tiktoken
 streamlit
+streamlit-option-menu
