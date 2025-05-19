@@ -1,6 +1,6 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import sql_chatbot,rag,temp,email_spam_detector,content_generator,language_translator,sentiment_analyzer,text_classifier,text_summarizer,grammar_correction,invoice
+import sql_chatbot,rag_chatbot,temp,email_spam_detector,content_generator,language_translator,sentiment_analyzer,text_classifier,text_summarizer,grammar_correction,invoice
 st.set_page_config(page_title="Streamlit App",page_icon="👜")
 with st.sidebar:
     selected = option_menu(
@@ -10,7 +10,7 @@ with st.sidebar:
     )
 
 if selected == "RAG Chatbot":
-    rag.run()
+    rag_chatbot.run()
 elif selected == "SQL DB Chatbot":
     sql_chatbot.run()
 elif selected == "Language Translator":
