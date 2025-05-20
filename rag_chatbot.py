@@ -43,9 +43,8 @@ def run():
     # if st.button("Submit!"):
     #     response = rag({"query" : question})
     #     st.write("Answer:",response['result'])
-
     st.title("RAG ChatBot")
-
+    st.write("Ask any questions related to these 5 pdfs : https://drive.google.com/drive/folders/127Bwi4_bMndbqlu4cIBX3ZzeTxqhmJBg?usp=sharing")
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
