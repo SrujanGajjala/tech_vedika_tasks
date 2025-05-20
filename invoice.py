@@ -21,7 +21,7 @@ def run():
   model = ChatGoogleGenerativeAI(model = "gemini-2.0-flash",api_key = gemini_api_key,temperature = 0)
 
   st.title("Doc to JSON Converter")
-  st.write("Invoice Files : \n https://drive.google.com/drive/folders/1lywcmALdRzZOPOcHVL5RsY7aA5r-0GxR?usp=sharing")
+  st.write("Invoice Files : https://drive.google.com/drive/folders/1lywcmALdRzZOPOcHVL5RsY7aA5r-0GxR?usp=sharing")
 
   uploaded_file = st.file_uploader("Choose a File")
   if uploaded_file is not None:
