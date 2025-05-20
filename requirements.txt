@@ -3,6 +3,7 @@ langchain
 langchain-google-genai
 langchain-community
 pypdf
+langchain_huggingface
 faiss-cpu
 tiktoken
 streamlit
