@@ -1,4 +1,6 @@
 {
     "GEMINI_API_KEY" : "AIzaSyAPTR5DUvWct50Tq8sK-iJP3nnraJz2nVs",
-    "TAVILY_API_KEY" : "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"
+    "TAVILY_API_KEY" : "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",
+    "HF_TOKEN" : "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",
+    "HUGGINGFACEHUB_API_TOKEN" : "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"
 }
