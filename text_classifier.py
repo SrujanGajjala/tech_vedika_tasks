@@ -13,7 +13,7 @@ def run():
     model = ChatGoogleGenerativeAI(model ="gemini-2.0-flash",api_key = gemini_api_key)
 
     st.title("Text Classifier")
-
+    st.write("A smart chatbot that classifies text into one of four categories: Technology, Finance, Medical, or Agriculture.")
     #Congratulations! You’ve won a $1000 gift card. Click here to claim now.
 
     if "classifier_chat_history" not in st.session_state:
