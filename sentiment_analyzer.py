@@ -14,7 +14,7 @@ def run():
     model = ChatGoogleGenerativeAI(model ="gemini-2.0-flash",api_key = gemini_api_key)
 
     st.title("Sentiment Analyzer")
-
+    st.write("A chatbot that detects and classifies text sentiment as Positive, Negative, or Neutral.")
     #Congratulations! You’ve won a $1000 gift card. Click here to claim now.
 
     if "senti_chat_history" not in st.session_state:
