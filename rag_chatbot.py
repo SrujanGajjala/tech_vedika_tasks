@@ -3,6 +3,8 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 import streamlit as st
 import json
+from langchain_community.vectorstores import FAISS
+from langchain.embeddings import HuggingFaceEmbeddings
 
 def load_config(path="config.json"):
     with open(path) as f:
@@ -14,8 +16,10 @@ def run():
     gemini_api_key = config["GEMINI_API_KEY"]
     model = ChatGoogleGenerativeAI(model = "gemini-2.0-flash",api_key = gemini_api_key)
     # Load vector store from pickle file
-    with open("faiss_vectorstore.pkl", "rb") as f:
-        loaded_vectorstore = pickle.load(f)
+    embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    loaded_vectorstore = FAISS.load_local("faiss_index", embeddings=embedding_model,allow_dangerous_deserialization=True)
+    # with open("faiss_vectorstore.pkl", "rb") as f:
+    #     loaded_vectorstore = pickle.load(f)
 
     # Optional: test search
     # query = "Which governments attempted to undermine the vital independence of the trade union movement through laborious registration procedures?"
