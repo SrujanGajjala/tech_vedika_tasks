@@ -1,12 +1,12 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import sql_chatbot,rag_chatbot,temp,email_spam_detector,content_generator,language_translator,sentiment_analyzer,text_classifier,text_summarizer,grammar_correction,invoice
+import sql_chatbot,rag_chatbot,temp,email_spam_detector,content_generator,language_translator,sentiment_analyzer,text_classifier,text_summarizer,grammar_correction,invoice,lang_graph
 st.set_page_config(page_title="Streamlit App",page_icon="👜")
 with st.sidebar:
     selected = option_menu(
         menu_title = "Main Menu",
-        options = ["Language Translator","Email Spam Detector","Text Summarizer","Sentiment Analyzer","Grammar Corrector","Text Classifier","Content Generator","Invoice Reader","RAG Chatbot", "SQL DB Chatbot",],
-        icons = ["Home","Buger","Home","Home","Home","Home","Home","Home","Home","Home"]
+        options = ["Language Translator","Email Spam Detector","Text Summarizer","Sentiment Analyzer","Grammar Corrector","Text Classifier","Content Generator","Invoice Reader","RAG Chatbot", "SQL DB Chatbot","Langgraph"],
+        icons = ["Home","Buger","Home","Home","Home","Home","Home","Home","Home","Home","Home"]
     )
 
 if selected == "RAG Chatbot":
@@ -29,3 +29,5 @@ elif selected == "Invoice Reader":
     invoice.run()
 elif selected == "Email Spam Detector":
     email_spam_detector.run()
+elif selected == "Langgraph":
+    lang_graph.run()

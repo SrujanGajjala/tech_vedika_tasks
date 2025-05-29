@@ -9,3 +9,5 @@ faiss-cpu
 tiktoken
 streamlit
 streamlit-option-menu
+
+langgraph
