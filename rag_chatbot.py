@@ -1,6 +1,6 @@
 import pickle
 from langchain_google_genai import ChatGoogleGenerativeAI
-from langchain_google_genai import GoogleGenerativeAIEmbeddings
+# from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import os
 import streamlit as st
 import json
@@ -17,8 +17,8 @@ def run():
     gemini_api_key = config["GEMINI_API_KEY"]
     model = ChatGoogleGenerativeAI(model = "gemini-2.0-flash",api_key = gemini_api_key)
     # Load vector store from pickle file
-    embedding_model = GoogleGenerativeAIEmbeddings(model = 'models/embedding-001',google_api_key =gemini_api_key)
-    # embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+    # embedding_model = GoogleGenerativeAIEmbeddings(model = 'models/embedding-001',google_api_key =gemini_api_key)
+    embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
     loaded_vectorstore = FAISS.load_local("faiss_index", embeddings=embedding_model,allow_dangerous_deserialization=True)
     # with open("faiss_vectorstore.pkl", "rb") as f:
     #     loaded_vectorstore = pickle.load(f)
