@@ -27,5 +27,4 @@ A unified Generative AI application built using Streamlit, integrated with Large
 
 ---
 
-## 📂 Project Structure
 
