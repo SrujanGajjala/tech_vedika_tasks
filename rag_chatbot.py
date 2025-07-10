@@ -1,6 +1,6 @@
 import pickle
 from langchain_google_genai import ChatGoogleGenerativeAI
-# from langchain_google_genai import GoogleGenerativeAIEmbeddings
+from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import os
 import streamlit as st
 import json
