@@ -1,0 +1,13 @@
+python-dotenv   
+langchain
+langchain-google-genai
+langchain-community
+pypdf
+PyMuPDF
+langchain_huggingface
+faiss-cpu
+tiktoken
+streamlit
+streamlit-option-menu
+
+langgraph
