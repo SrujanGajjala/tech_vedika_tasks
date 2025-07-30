@@ -19,7 +19,11 @@ tavily_api_key = os.getenv("TAVILY_API_KEY")
 
 model = ChatGoogleGenerativeAI(model = "gemini-2.0-flash",api_key = gemini_api_key)
 
+<<<<<<< HEAD
 folder_path = r"C:\Users\sruja\OneDrive\Desktop\tech_vedika_tasks-main\5_pdfs"
+=======
+folder_path = r"F:\Tech Vedika\mini_project\Vedika\mini_project\5_pdfs"
+>>>>>>> aaf8012285b0e49f81b55ce812ba29fa72866216
 all_docs = []
 text_chunks = []
 chunk_metadata = []
@@ -67,8 +71,13 @@ os.environ['HF_TOKEN'] = os.getenv("HF_TOKEN")
 
 # from sentence_transformers import SentenceTransformer
 
+<<<<<<< HEAD
 # embedding_model =HuggingFaceEmbeddings(model_name = "all-MiniLM-L6-v2")
 embedding_model = GoogleGenerativeAIEmbeddings(model = 'models/embedding-001',google_api_key =gemini_api_key)
+=======
+embedding_model =HuggingFaceEmbeddings(model_name = "all-MiniLM-L6-v2")
+# embedding_model = GoogleGenerativeAIEmbeddings(model = 'models/embedding-001',google_api_key =gemini_api_key)
+>>>>>>> aaf8012285b0e49f81b55ce812ba29fa72866216
 # Extract text from res (which is a list of Document objects)
 # texts = [doc.page_content for doc in res]
 
