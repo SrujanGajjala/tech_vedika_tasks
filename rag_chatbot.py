@@ -1,8 +1,5 @@
 import pickle
-<<<<<<< HEAD
 import asyncio
-=======
->>>>>>> aaf8012285b0e49f81b55ce812ba29fa72866216
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import os
@@ -18,10 +15,7 @@ def load_config(path="config.json"):
 config = load_config()
 
 def run():
-<<<<<<< HEAD
     asyncio.set_event_loop(asyncio.new_event_loop())
-=======
->>>>>>> aaf8012285b0e49f81b55ce812ba29fa72866216
     gemini_api_key = config["GEMINI_API_KEY"]
     model = ChatGoogleGenerativeAI(model = "gemini-2.0-flash",api_key = gemini_api_key)
     # Load vector store from pickle file
@@ -75,26 +69,6 @@ def run():
         
         st.session_state.messages.append({"role":"assistant","content":response['result']})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # st.write("Retrieved Chunks:")
 # for i, doc in enumerate(vector_index):
 #     # Get the original index of this chunk
@@ -121,7 +95,3 @@ def run():
 #     source_file = os.path.basename(metadata.get('source', 'Unknown file'))
 #     page_number = metadata.get('page', 'Unknown page')
 #     st.write(f"📄 File: {source_file}, 📄 Page: {page_number}")
-<<<<<<< HEAD
-=======
-
->>>>>>> aaf8012285b0e49f81b55ce812ba29fa72866216
